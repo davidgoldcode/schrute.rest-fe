@@ -4,16 +4,24 @@
 
 @layer base {
   html {
-    @apply text-center lowercase;
+    @apply text-center lowercase h-screen w-screen;
   }
   h1 {
-    @apply text-2xl;
+    @apply text-2xl font-bold;
   }
   h3,
+  h4,
   span {
-    @apply text-xl;
+    @apply text-xl font-bold;
   }
   p {
     @apply text-lg;
+  }
+  h1,
+  h3,
+  h4,
+  p,
+  span {
+    @apply p-4;
   }
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const url = process.env.REACT_APP_API_URL;
 const faq = [
   {
     q: "Can I use this in my project?",
@@ -24,33 +25,37 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen justify-evenly">
+    <div className="flex flex-col h-full w-9/12 mx-auto my-8 justify-between">
       <header className="flex flex-col">
-        <h1 className="border-b-4 border-black">Schrute.rest</h1>
-        <h3>
+        <h1 className="border-b-4 border-black text-left">Schrute.rest</h1>
+        <h3 className="text-left">
           A free REST API to generate the best quotes that Scranton has ever
           seen
         </h3>
       </header>
-      <main>
-        <div>
+      <main className="whitespace-pre-line m-12">
+        <div className="border-4 border-black rounded-lg">
           <div>
-            <h3>API</h3>
+            <h3 className="border-b-4 border-black text-left">API</h3>
             <span>
               GET <a href=""></a>
             </span>
             <span>Tweet</span>
             <span>Refresh</span>
           </div>
-          <h3>ttextetesljalsdjfl;kasd</h3>
+          <h3 className="text-left">{"{"}</h3>
+          <h3 className="">
+            {'"quote"'} : {null}
+          </h3>
+          <h3 className="text-left">{"}"}</h3>
         </div>
       </main>
-      <section>
-        <h3>FAQ</h3>
+      <section className="border-4 border-black rounded-lg m-12">
+        <h3 className="border-b-4 border-black text-left">FAQ</h3>
         {faq.map((item) => (
           <>
-            <h4>{item.q}</h4>
-            <p>{item.a}</p>
+            <h4 className="p-1">{item.q}</h4>
+            <p className="p-1">{item.a}</p>
           </>
         ))}
       </section>
