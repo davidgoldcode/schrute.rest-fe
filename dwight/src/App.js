@@ -3,6 +3,8 @@ import axios from "axios";
 import ImgWithFallback from "./utils/ImgWithFallback";
 import { default as png } from "./assets/schrute-face.png";
 import { default as webp } from "./assets/schrute-face.webp";
+import { default as screensvg } from "./assets/screenphoto.svg";
+import { default as screenwebp } from "./assets/screenphoto.webp";
 
 const url = process.env.REACT_APP_API_URL;
 const faq = [
@@ -43,6 +45,12 @@ function App() {
 
   return (
     <div className="flex flex-col h-full w-9/12 mx-auto my-1.5 justify-between">
+      <ImgWithFallback
+        src={screenwebp}
+        fallback={screenwebp}
+        alt="Make your screen bigger!"
+        className="sm:hidden visible transition h-full w-full object-contain bg-purple-700	fixed top-0 left-0 z-10"
+      />
       <span className="fixed top-60 -left-40 transform -rotate-90">
         made by david gold{" "}
         <a href="https://github.com/davidgoldcode" className="text-purple-700">
