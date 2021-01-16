@@ -72,7 +72,7 @@ function App() {
             <span className="uppercase">
               GET &emsp;
               <a
-                href=""
+                href="justheretomaketheerrorgoaway.com"
                 target="_blank"
                 rel="noreferrer"
                 className="text-purple-700 lowercase"
