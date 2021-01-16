@@ -47,7 +47,7 @@ function App() {
     <div className="flex flex-col h-full w-9/12 mx-auto my-1.5 justify-between">
       <ImgWithFallback
         src={screenwebp}
-        fallback={screenwebp}
+        fallback={screensvg}
         alt="Make your screen bigger!"
         className="sm:hidden visible transition h-full w-full object-contain bg-purple-700	fixed top-0 left-0 z-10"
       />
