@@ -20,9 +20,11 @@ const faq = [
     },
   },
 ];
+const twitter = "https://twitter.com/intent/tweet?text=";
 
 function App() {
   const [quote, setQuote] = useState("");
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     axios
@@ -30,8 +32,11 @@ function App() {
       .then((res) => {
         setQuote(res.data.quote);
       })
-      .catch((err) => console.log(err));
-  }, []);
+      .catch((err) => {
+        console.log(err);
+        alert("Error! Sorry :( - try again l8r");
+      });
+  }, [refresh]);
 
   return (
     <div className="flex flex-col h-full w-9/12 mx-auto my-1.5 justify-between">
@@ -52,15 +57,31 @@ function App() {
       <main className="whitespace-pre-line m-6">
         <div className="border-4 border-black rounded-lg">
           <h3 className="border-b-4 border-black text-left uppercase">API</h3>
-          <div className="flex justify-around">
+          <div className="flex justify-around items-center">
             <span className="uppercase">
               GET &emsp;
-              <a href="schrute.api" className="text-purple-700 lowercase">
-                schrute.api
+              <a
+                href=""
+                target="_blank"
+                rel="noreferrer"
+                className="text-purple-700 lowercase"
+              >
+                schrute.rest/api/random
               </a>
             </span>
-            <span>Tweet 🐦</span>
-            <span>Refresh 🔁</span>
+            <a
+              className="extra"
+              href={
+                twitter +
+                quote +
+                "- Dwight K. Schrute. Sourced from schrute.rest @davidigold"
+              }
+              target="_blank"
+              rel="noreferrer"
+            >
+              Tweet 🐦
+            </a>
+            <button onClick={() => setRefresh(!refresh)}>Refresh 🔁</button>
           </div>
           <div>
             <h3 className="text-left text-xl sm:ml-20	sm:text-3xl">{"{"}</h3>

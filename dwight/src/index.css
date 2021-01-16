@@ -11,8 +11,10 @@
   }
   h3,
   h4,
-  span {
-    @apply text-sm sm:text-xl font-bold;
+  span,
+  button,
+  .extra {
+    @apply text-sm sm:text-xl font-bold lowercase;
   }
   p {
     @apply text-lg;
