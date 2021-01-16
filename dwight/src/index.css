@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-center h-screen w-screen flex flex-col justify-evenly lowercase;
+  }
+  h1 {
+    @apply text-2xl;
+  }
+  h3,
+  span {
+    @apply text-xl;
+  }
+  p {
+    @apply text-lg;
+  }
+}
