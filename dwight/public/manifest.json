@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "schrute.rest",
+  "name": "Free API for Dwight Schrute Quotes",
   "icons": [
     {
       "src": "favicon.ico",
