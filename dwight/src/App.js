@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ImgWithFallback from "./utils/ImgWithFallback";
+import { default as png } from "./assets/schrute-face.png";
+import { default as webp } from "./assets/schrute-face.webp";
 
 const url = process.env.REACT_APP_API_URL;
 const faq = [
@@ -48,7 +51,15 @@ function App() {
         🤙
       </span>
       <header className="flex flex-col">
-        <h1 className="border-b-4 border-black text-left">Schrute.rest</h1>
+        <div className="border-b-4 border-black justify-between items-end flex">
+          <h1 className="text-left">Schrute.rest</h1>
+          <ImgWithFallback
+            src={webp}
+            fallback={png}
+            alt="Dwight Schrute"
+            className="fixed -bottom-10 left-0"
+          />
+        </div>
         <h3 className="text-left">
           A free REST API to generate the best quotes that Scranton has ever
           seen
