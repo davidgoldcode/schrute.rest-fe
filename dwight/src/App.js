@@ -35,6 +35,13 @@ function App() {
 
   return (
     <div className="flex flex-col h-full w-9/12 mx-auto my-1.5 justify-between">
+      <span className="fixed top-60 -left-40 transform -rotate-90">
+        made by david gold{" "}
+        <a href="https://github.com/davidgoldcode" className="text-purple-700">
+          @davidgoldcode
+        </a>{" "}
+        🤙
+      </span>
       <header className="flex flex-col">
         <h1 className="border-b-4 border-black text-left">Schrute.rest</h1>
         <h3 className="text-left">
@@ -42,7 +49,7 @@ function App() {
           seen
         </h3>
       </header>
-      <main className="whitespace-pre-line m-12">
+      <main className="whitespace-pre-line m-6">
         <div className="border-4 border-black rounded-lg">
           <h3 className="border-b-4 border-black text-left uppercase">API</h3>
           <div className="flex justify-around">
@@ -55,12 +62,16 @@ function App() {
             <span>Tweet 🐦</span>
             <span>Refresh 🔁</span>
           </div>
-          <h3 className="text-left">{"{"}</h3>
-          <h3 className="">"quote" : "{quote}"</h3>
-          <h3 className="text-left">{"}"}</h3>
+          <div>
+            <h3 className="text-left text-xl sm:ml-20	sm:text-3xl">{"{"}</h3>
+            <h3 className="text-base sm:text-2xl p-4 mx-8">
+              "quote" : "{quote}"
+            </h3>
+            <h3 className="text-left text-xl sm:ml-20 sm:text-3xl">{"}"}</h3>
+          </div>
         </div>
       </main>
-      <section className="border-4 border-black rounded-lg m-12 text-left">
+      <section className="border-4 border-black rounded-lg m-6 text-left">
         <h3 className="border-b-4 border-black uppercase">FAQ</h3>
         {faq.map((item) => (
           <>
