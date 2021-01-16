@@ -5,15 +5,19 @@ const url = process.env.REACT_APP_API_URL;
 const faq = [
   {
     q: "Can I use this in my project?",
-    a: "Yes! Do whatever you'd like with this",
+    a: "Yes! Dwight's quotes are for the world to enjoy, do whatever",
   },
   {
-    q: "Can I use this in my project?",
-    a: "Yes! Do whatever you'd like with this",
+    q: "Are there call limits?",
+    a: "Not currently, but please be mindful of this",
   },
   {
-    q: "Can I use this in my project?",
-    a: "Yes! Do whatever you'd like with this",
+    q: "Is it open source?",
+    a: "Yes - contributions are greatly appreciated / encouraged",
+    extra: {
+      fe: "https://github.com/davidgoldcode/schrute.rest-fe",
+      be: "https://github.com/davidgoldcode/schrute.rest",
+    },
   },
 ];
 
@@ -21,11 +25,16 @@ function App() {
   const [quote, setQuote] = useState("");
 
   useEffect(() => {
-    axios.get("");
+    axios
+      .get(url)
+      .then((res) => {
+        setQuote(res.data.quote);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   return (
-    <div className="flex flex-col h-full w-9/12 mx-auto my-8 justify-between">
+    <div className="flex flex-col h-full w-9/12 mx-auto my-1.5 justify-between">
       <header className="flex flex-col">
         <h1 className="border-b-4 border-black text-left">Schrute.rest</h1>
         <h3 className="text-left">
@@ -35,27 +44,28 @@ function App() {
       </header>
       <main className="whitespace-pre-line m-12">
         <div className="border-4 border-black rounded-lg">
-          <div>
-            <h3 className="border-b-4 border-black text-left">API</h3>
-            <span>
-              GET <a href=""></a>
+          <h3 className="border-b-4 border-black text-left uppercase">API</h3>
+          <div className="flex justify-around">
+            <span className="uppercase">
+              GET &emsp;
+              <a href="schrute.api" className="text-purple-700 lowercase">
+                schrute.api
+              </a>
             </span>
-            <span>Tweet</span>
-            <span>Refresh</span>
+            <span>Tweet 🐦</span>
+            <span>Refresh 🔁</span>
           </div>
           <h3 className="text-left">{"{"}</h3>
-          <h3 className="">
-            {'"quote"'} : {null}
-          </h3>
+          <h3 className="">"quote" : "{quote}"</h3>
           <h3 className="text-left">{"}"}</h3>
         </div>
       </main>
-      <section className="border-4 border-black rounded-lg m-12">
-        <h3 className="border-b-4 border-black text-left">FAQ</h3>
+      <section className="border-4 border-black rounded-lg m-12 text-left">
+        <h3 className="border-b-4 border-black uppercase">FAQ</h3>
         {faq.map((item) => (
           <>
-            <h4 className="p-1">{item.q}</h4>
-            <p className="p-1">{item.a}</p>
+            <h4 className="p-1 ml-2">‣{item.q}</h4>
+            <p className="p-1 italic ml-4">&emsp;{item.a}</p>
           </>
         ))}
       </section>
