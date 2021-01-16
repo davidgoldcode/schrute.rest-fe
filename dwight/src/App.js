@@ -24,9 +24,9 @@ function App() {
   }, []);
 
   return (
-    <>
-      <header>
-        <h1>Schrute.rest</h1>
+    <div className="flex flex-col h-screen justify-evenly">
+      <header className="flex flex-col">
+        <h1 className="border-b-4 border-black">Schrute.rest</h1>
         <h3>
           A free REST API to generate the best quotes that Scranton has ever
           seen
@@ -54,7 +54,7 @@ function App() {
           </>
         ))}
       </section>
-    </>
+    </div>
   );
 }
 

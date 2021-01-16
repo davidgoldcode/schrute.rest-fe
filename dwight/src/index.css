@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply text-center h-screen w-screen flex flex-col justify-evenly lowercase;
+    @apply text-center lowercase;
   }
   h1 {
     @apply text-2xl;
