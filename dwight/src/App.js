@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import ImgWithFallback from "./utils/ImgWithFallback";
 import { default as png } from "./assets/schrute-face.png";
 import { default as webp } from "./assets/schrute-face.webp";
@@ -114,10 +115,14 @@ function App() {
       <section className="border-4 border-black rounded-lg m-6 text-left">
         <h3 className="border-b-4 border-black uppercase">FAQ</h3>
         {faq.map((item) => (
-          <>
-            <h4 className="p-1 ml-2">‣{item.q}</h4>
-            <p className="p-1 italic ml-4">&emsp;{item.a}</p>
-          </>
+          <Fragment key={uuidv4()}>
+            <h4 key={uuidv4()} className="p-1 ml-2">
+              ‣{item.q}
+            </h4>
+            <p key={uuidv4()} className="p-1 italic ml-4">
+              &emsp;{item.a}
+            </p>
+          </Fragment>
         ))}
       </section>
     </div>
